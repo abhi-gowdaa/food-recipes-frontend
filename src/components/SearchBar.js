@@ -7,12 +7,15 @@ import SliderComponent from "./Slider";
 const SearchBar = ({onSearchSubmit}) => {
     const [selectedValue, setSelectedValue] = useState('');
     const [searchValue,setSearchValue]=useState('');
-    const [sliderValue, setsliderValue] = useState('');
+    const [sliderValue, setsliderValue] = useState(0);
   
   const handleSubmit=(e)=>{
     e.preventDefault();
    
-    onSearchSubmit({searchValue,selectedValue,sliderValue});
+    if(searchValue.length> 0){
+
+      onSearchSubmit({searchValue,selectedValue,sliderValue});
+    }
   }
   const handleSliderValueChange=(value)=>{
   setsliderValue(value);
@@ -62,7 +65,7 @@ const SearchBar = ({onSearchSubmit}) => {
     />
      <SliderComponent onSliderValueChange={handleSliderValueChange}/>
     <OutlinedInput
-
+      required
       type="text"
       onChange={(e) => {
         setSearchValue(e.target.value); 

@@ -3,6 +3,7 @@ import '../globalStyles/styles.css';
 import SearchBar from "../components/SearchBar";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import DataList from "./DataList";
 
 
 
@@ -10,8 +11,10 @@ const Search = () => {
     const [search, setSearch] = useState({
         searchValue:"",
         selectedCat:"",
-        sliderValue:""
+        sliderValue:0
     });
+
+    const [data, setdata] = useState();
     const handleSearchData =(data)=>{
         setSearch(data)
        
@@ -23,9 +26,12 @@ const Search = () => {
 
       const fetchData = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/" ,search
+            const response = await axios.post("http://localhost:5000/" ,search
             );
-            console.log("Fetched Data: ", response.data);
+            // console.log("Fetched Data: ", response.data);
+            // const data=response.data
+            setdata(response.data)
+            console.log(response.data.hits.hits);
         } catch (error) {
             console.error("Error fetching data: ", error);
         }
@@ -54,6 +60,7 @@ const Search = () => {
       }}
     >
   <SearchBar onSearchSubmit={handleSearchData} />
+ {data && <DataList dataa={data}/>}
     </Box>
   );
 };
