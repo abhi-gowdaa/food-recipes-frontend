@@ -1,23 +1,23 @@
 import { NavLink } from "react-router-dom";
-import "./MainNavigation.css";  
-import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+import "./MainNavigation.css";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import { Typography } from "@mui/material";
 
 export function MainNavigation() {
   return (
     <header className="main-header">
       <nav className="nav-container">
-        {/* Left section with icon and text */}
         <div className="nav-left">
           <RestaurantMenuIcon />
-          <Typography variant="h5" sx={{color:"white"}}>Food Recipe</Typography>
+          <Typography variant="h5" sx={{ color: "white" }}>
+            Food Recipe
+          </Typography>
         </div>
-        
-        {/* Center section with navigation links */}
+
         <ul className="nav-list">
           <li className="nav-item">
             <NavLink
-              to="/"
+              to="/search"
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
@@ -28,7 +28,7 @@ export function MainNavigation() {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/pro"
+              to="/searc"
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
