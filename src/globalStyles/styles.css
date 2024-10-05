@@ -13,19 +13,19 @@
    
   }
    
-  .car{
-    height: 200px;
-    width: 200px;
+  .image{
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
   }
 
+  .flx{
+     flex: auto;
+  
+  }
 
-
-  /* '.MuiDataGrid-columnHeaderTitleContainerContent': {
  
-    alignItems: 'center',
-    justifyContent:"center",
-    alignContent:"center",
-    alignSelf:"center",
-    textAlign:"center",
-    bgColor:"red"
-} */
+
+
+ 

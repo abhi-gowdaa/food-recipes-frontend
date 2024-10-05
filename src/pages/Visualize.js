@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@mui/material';
 
-const Home = () => {
+const Visualize = () => {
   return (
     <Box
     className="data-card"
@@ -12,15 +12,14 @@ const Home = () => {
         mt: "20px",
         overflow:"hidden",
         mb:"10px",
-        maxWidth: "90rem",
-        height: "820px",
+        maxWidth: "60rem",
+        height: "540px",
         borderRadius: "25px",
        
       }}
     > 
-      <img src='/pizza' alt='pizza' style={{width:"100%",height:"100%"}}/>
-    </Box>
+         </Box>
   )
 }
 
-export default Home
+export default Visualize
