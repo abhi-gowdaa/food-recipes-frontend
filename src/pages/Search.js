@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import DataList from "./DataList";
-
+   
 
 
 const Search = () => {
@@ -14,11 +14,13 @@ const Search = () => {
         sliderValue:0
     });
 
-    const [data, setdata] = useState();
+    const [resData, setResData] = useState();
+
+
     const handleSearchData =(data)=>{
+        localStorage.removeItem('searchData');
         setSearch(data)
-       
-        
+   
     }
 
 
@@ -28,18 +30,25 @@ const Search = () => {
         try {
             const response = await axios.post("http://localhost:5000/" ,search
             );
-            // console.log("Fetched Data: ", response.data);
+             console.log("Fetched Data: ", response.data);
             // const data=response.data
-            setdata(response.data)
-            console.log(response.data.hits.hits);
+            setResData(response.data.hits.hits);
+            localStorage.setItem('searchData', JSON.stringify(response.data.hits.hits));
+            
+             
+
         } catch (error) {
             console.error("Error fetching data: ", error);
         }
     };
+    const saveData = localStorage.getItem('searchData');
         console.log(search);
-        if (search.searchValue || search.selectedCat || search.sliderValue) {
-            fetchData();   
+        if (saveData) {
+          setResData(JSON.parse(saveData));   
+        } else if (search.searchValue || search.selectedCat || search.sliderValue) {
+          fetchData();
         }
+      
     }, [search]);
 
       
@@ -60,7 +69,7 @@ const Search = () => {
       }}
     >
   <SearchBar onSearchSubmit={handleSearchData} />
- {data && <DataList dataa={data}/>}
+ {resData && <DataList data={resData}/>}
     </Box>
   );
 };

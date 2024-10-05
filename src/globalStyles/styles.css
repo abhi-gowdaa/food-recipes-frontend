@@ -5,4 +5,27 @@
    
   }
   
+  .custom-row {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: rgba(250, 250, 248);
+    /* background-color: rgb(171, 237, 237); */
+   
+  }
+   
+  .car{
+    height: 200px;
+    width: 200px;
+  }
+
+
+
+  /* '.MuiDataGrid-columnHeaderTitleContainerContent': {
  
+    alignItems: 'center',
+    justifyContent:"center",
+    alignContent:"center",
+    alignSelf:"center",
+    textAlign:"center",
+    bgColor:"red"
+} */

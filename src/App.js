@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RootLayout } from "./pages/Root";
 import Search from "./pages/Search";
 import Home from "./pages/Home";
+import Details from "./pages/Details";
 
 const router= createBrowserRouter([
   {
@@ -10,6 +11,7 @@ const router= createBrowserRouter([
     element:<RootLayout/>,
     children:[
       {index:true,element:<Search/>},
+      {path:"details/:id",element:<Details/>}
        
     ]
   },
