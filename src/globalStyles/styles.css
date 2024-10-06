@@ -1,3 +1,6 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+ 
 .data-card {
   background-color: rgb(86, 84, 80);
   backdrop-filter: blur(20px);
@@ -25,7 +28,46 @@
   
   }
 
- 
+
+  .title{
+    font-family: "Homemade Apple", cursive;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(235, 238, 238);
+    font-size: 3rem;
+    margin-left: 45px;
+  }
+  .homeimg{
+    max-width: 500px;
+     
+  }
+
+  .homeNav{
+    margin:auto;
+    margin-top: -28px;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(20deg, rgb(169, 96, 218) 30%, rgb(255, 106, 106) 70% );
+
+    border-radius: 25px;
+    max-width: 60rem;
+  }
 
 
- 
+
+  .desc{
+    font-weight: 500;
+    font-style: normal;
+    color: #3795BD;
+    font-size: 1.5rem;
+    margin-left: 45px;
+  }
+
+  .tContainer{
+   max-width: 700px;
+   margin: 1rem;
+  }
+
+  .mainContainer{
+    display: flex;
+    flex-direction: row;
+  }

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./MainNavigation.css";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
-import { Typography } from "@mui/material";
+import "../globalStyles/styles.css"
 
 export function MainNavigation() {
   return (
@@ -9,15 +9,15 @@ export function MainNavigation() {
       <nav className="nav-container">
         <div className="nav-left">
           <RestaurantMenuIcon />
-          <Typography variant="h5" sx={{ color: "white" }}>
+          <h2 className="heading">
             Food Recipe
-          </Typography>
+          </h2>
         </div>
 
         <ul className="nav-list">
-          <li className="nav-item">
+        <li className="nav-item">
             <NavLink
-              to="/search"
+              to="/"
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
@@ -28,12 +28,23 @@ export function MainNavigation() {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/searc"
+              to="/search"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+              end
+            >
+              Explore
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/search/visualize"
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
             >
-              Products
+              Visualize
             </NavLink>
           </li>
         </ul>
