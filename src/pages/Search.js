@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import DataList from "./DataList";
-   
+import CircularProgress from '@mui/material/CircularProgress';  
 
 
 const Search = () => {
@@ -15,6 +15,7 @@ const Search = () => {
     });
 
     const [resData, setResData] = useState();
+    const [loading,setLoading]=useState(false)
 
 
     const handleSearchData =(data)=>{
@@ -28,11 +29,13 @@ const Search = () => {
 
       const fetchData = async () => {
         try {
+           setLoading(true)
             const response = await axios.post("http://localhost:5000/" ,search
             );
              console.log("Fetched Data: ", response.data);
             // const data=response.data
             setResData(response.data.hits.hits);
+            setLoading(false)
             localStorage.setItem('searchData', JSON.stringify(response.data.hits.hits));
             
              
@@ -65,10 +68,12 @@ const Search = () => {
         mb:"10px",
         maxWidth: "60rem",
         height: "500px",
+        overflow:"hidden",
         borderRadius: "25px",
       }}
     >
   <SearchBar onSearchSubmit={handleSearchData} />
+  {loading &&  <div style={{margin:"50px",marginLeft:"440px"}}><CircularProgress/></div> }
  {resData && <DataList data={resData}/>}
     </Box>
   );

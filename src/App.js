@@ -5,6 +5,7 @@ import Search from "./pages/Search";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import Visualize from "./pages/Visualize";
+import { Error } from "./pages/Error";
 
 const router = createBrowserRouter([
   {
@@ -15,12 +16,13 @@ const router = createBrowserRouter([
       { path: "details/:id", element: <Details /> },
       { path: "visualize", element: <Visualize /> },
     ],
+    errorElement:<Error/>
   },
   {
     path: "/",
     element: <Home />,
+    errorElement:<Error/>
   },
-
 ]);
 
 function App() {

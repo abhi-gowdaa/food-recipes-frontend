@@ -12,7 +12,7 @@ const navigate=useNavigate()
 
   return (
     <Box
-    className="data-card"
+    className="home-card"
       component="section" 
       sx={{
         p: 2,
