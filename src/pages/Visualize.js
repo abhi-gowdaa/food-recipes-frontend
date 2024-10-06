@@ -13,7 +13,7 @@ const Visualize = () => {
         overflow:"hidden",
         mb:"10px",
         maxWidth: "60rem",
-        height: "540px",
+        height: "530px",
         borderRadius: "25px",
        
       }}
