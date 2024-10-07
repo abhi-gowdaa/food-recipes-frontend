@@ -16,8 +16,13 @@
     npm start
     ```
 
-4. **Build for production** (optional):
-    ```bash
-    npm run build
-    ```
+---
 
+The OpenSearch installation instructions are available in the second part of the YouTube video                       
+https://www.youtube.com/watch?v=Bl4XQYRmawM
+
+---
+
+Backend repository
+
+https://github.com/abhi-gowdaa/recipe-backend
