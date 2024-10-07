@@ -18,10 +18,12 @@
 
 ---
 
-The OpenSearch installation instructions are available in the second part of the YouTube video                       
+The OpenSearch installation instructions are available in the second part of the YouTube video                    
 https://www.youtube.com/watch?v=Bl4XQYRmawM
 
+
 ---
+The openSearch necessary data provided in the  recipe-backend repo
 
 Backend repository
 
