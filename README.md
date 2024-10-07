@@ -23,7 +23,7 @@ https://www.youtube.com/watch?v=Bl4XQYRmawM
 
 
 ---
-The openSearch necessary data provided in the  recipe-backend repo
+The openSearch necessary data files (2 json files)  provided in the  recipe-backend repo
 
 Backend repository
 
