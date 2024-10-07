@@ -1,0 +1,75 @@
+-----------------line graph for fat--------------------
+
+{
+  "aggs": {
+    "3": {
+      "range": {
+        "field": "fat",
+        "ranges": [
+          {
+            "from": 10,
+            "to": 20
+          },
+          {
+            "from": 20,
+            "to": 30
+          },
+          {
+            "from": 30,
+            "to": 50
+          },
+          {
+            "from": 50,
+            "to": 60
+          },
+          {
+            "from": 59,
+            "to": 70
+          },
+          {
+            "from": 70,
+            "to": 80
+          },
+          {
+            "from": 80,
+            "to": 90
+          },
+          {
+            "from": 90,
+            "to": 200
+          },
+          {
+            "from": 200
+          }
+        ],
+        "keyed": true
+      }
+    }
+  },
+  "size": 0,
+  "stored_fields": [
+    "*"
+  ],
+  "script_fields": {},
+  "docvalue_fields": [
+    {
+      "field": "date",
+      "format": "date_time"
+    }
+  ],
+  "_source": {
+    "excludes": []
+  },
+  "query": {
+    "bool": {
+      "must": [],
+      "filter": [
+        {
+          "match_all": {}
+        }
+      ],
+      "should": [],
+      "must_not": []
+    }
+  }
+}

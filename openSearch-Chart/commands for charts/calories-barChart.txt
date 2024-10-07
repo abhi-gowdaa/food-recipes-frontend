@@ -1,0 +1,52 @@
+-------------------calories bar chart--------------------
+
+{
+  "aggs": {
+    "3": {
+      "range": {
+        "field": "calories",
+        "ranges": [
+          {
+            "from": 0,
+            "to": 100
+          },
+          {
+            "from": 100,
+            "to": 200
+          },
+          {
+            "from": 200,
+            "to": 500
+          }
+        ],
+        "keyed": true
+      }
+    }
+  },
+  "size": 0,
+  "stored_fields": [
+    "*"
+  ],
+  "script_fields": {},
+  "docvalue_fields": [
+    {
+      "field": "date",
+      "format": "date_time"
+    }
+  ],
+  "_source": {
+    "excludes": []
+  },
+  "query": {
+    "bool": {
+      "must": [],
+      "filter": [
+        {
+          "match_all": {}
+        }
+      ],
+      "should": [],
+      "must_not": []
+    }
+  }
+}
